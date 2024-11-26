@@ -65,7 +65,6 @@ void clearAllClock()
 }
 void setNumberOnClock(int num)
 {
-//	clearAllClock();
 	// Turn on the LED corresponding to the counter value
 	if (num == 0) {
 	    HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);  // Turn on LED 1

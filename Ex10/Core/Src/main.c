@@ -65,47 +65,6 @@ void clearAllClock()
 }
 void setNumberOnClock(int num)
 {
-// 	switch(num)
-// 	{
-// 	case 0:
-// 		HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, RESET);
-// 		break;
-// 	case 1:
-// 		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, RESET);
-// 		break;
-// 	case 2:
-// 		HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, RESET);
-// 		break;
-// 	case 3:
-// 		HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, RESET);
-// 		break;
-// 	case 4:
-// 		HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, RESET);
-// 		break;
-// 	case 5:
-// 		HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, RESET);
-// 		break;
-// 	case 6:
-// 		HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, RESET);
-// 		break;
-// 	case 7:
-// 		HAL_GPIO_WritePin(LED7_GPIO_Port, LED7_Pin, RESET);
-// 		break;
-// 	case 8:
-// 		HAL_GPIO_WritePin(LED8_GPIO_Port, LED8_Pin, RESET);
-// 		break;
-// 	case 9:
-// 		HAL_GPIO_WritePin(LED9_GPIO_Port, LED9_Pin, RESET);
-// 		break;
-// 	case 10:
-// 		HAL_GPIO_WritePin(LED10_GPIO_Port, LED10_Pin, RESET);
-// 		break;
-// 	case 11:
-// 		HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, RESET);
-// 		break;
-// 	}
-//	clearAllClock();
-//	// Turn on the LED corresponding to the counter value
 	if (num == 0) {
 	    HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);  // Turn on LED 1
 	} else if (num == 1) {
@@ -132,51 +91,6 @@ void setNumberOnClock(int num)
 	    HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, GPIO_PIN_RESET); // Turn on LED 12
 	}
 }
-//void setAllClock()
-//{
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);  // LED 1
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);  // LED 2
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);  // LED 3
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET);  // LED 4
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);  // LED 5
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_RESET);  // LED 6
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET); // LED 7
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_RESET); // LED 8
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_RESET); // LED 9
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_13, GPIO_PIN_RESET); // LED 10
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_14, GPIO_PIN_RESET); // LED 11
-//    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET); // LED 12
-//}
-//void clearNumberOnClock(int num)
-//{
-//	setAllClock();
-//	// Turn on the LED corresponding to the counter value
-//	if (num == 0) {
-//	    HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);  // Turn on LED 1
-//	} else if (num == 1) {
-//	    HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);  // Turn on LED 2
-//	} else if (num == 2) {
-//	    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);  // Turn on LED 3
-//	} else if (num == 3) {
-//	    HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, GPIO_PIN_SET);  // Turn on LED 4
-//	} else if (num == 4) {
-//	    HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, GPIO_PIN_SET);  // Turn on LED 5
-//	} else if (num == 5) {
-//	    HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, GPIO_PIN_SET);  // Turn on LED 6
-//	} else if (num == 6) {
-//	    HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_SET); // Turn on LED 7
-//	} else if (num == 7) {
-//	    HAL_GPIO_WritePin(LED7_GPIO_Port, LED7_Pin, GPIO_PIN_SET); // Turn on LED 8
-//	} else if (num == 8) {
-//	    HAL_GPIO_WritePin(LED8_GPIO_Port, LED8_Pin, GPIO_PIN_SET); // Turn on LED 9
-//	} else if (num == 9) {
-//	    HAL_GPIO_WritePin(LED9_GPIO_Port, LED9_Pin, GPIO_PIN_SET); // Turn on LED 10
-//	} else if (num == 10) {
-//	    HAL_GPIO_WritePin(LED10_GPIO_Port, LED10_Pin, GPIO_PIN_SET); // Turn on LED 11
-//	} else if (num == 11) {
-//	    HAL_GPIO_WritePin(LED11_GPIO_Port, LED11_Pin, GPIO_PIN_SET); // Turn on LED 12
-//	}
-//}
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -220,44 +134,42 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int sec = 0;
-  int min = 30;
-  int hour = 2;
+  int Second = 0;
+  int Minute = 30;
+  int Hour = 2;
 
   while (1)
   {
-    /* USER CODE END WHILE */
-	    // Clear all LEDs before updating
-	    clearAllClock();
+      // Turn off all LEDs before updating the time display
+      clearAllClock();
 
-	    // Set LEDs for seconds, minutes, and hours
-	    setNumberOnClock(sec/5);
-	    setNumberOnClock(min/5);
-	    setNumberOnClock(hour);
+      // Illuminate the corresponding LEDs for seconds, minutes, and hours, using 12 LEDs to represent 60 seconds and 60 minutes
+      setNumberOnClock(Second / 5);
+      setNumberOnClock(Minute / 5);
+      setNumberOnClock(Hour);
 
-	    // Increment seconds
-	    sec++;
+      Second++;
 
-	    // Handle overflow for seconds and minutes
-	    if (sec >= 60) {
-	        sec = 0;
-	        min++;
-	    }
+      // Reset seconds and increment minutes if seconds reach 60
+      if (Second >= 60) {
+          Second = 0;
+          Minute++;
+      }
 
-	    // Handle overflow for minutes and hours
-	    if (min >= 60) {
-	        min = 0;
-	        hour++;
-	    }
+      // Reset minutes and increment hours if minutes reach 60
+      if (Minute >= 60) {
+          Minute = 0;
+          Hour++;
+      }
 
-	    // Handle overflow for hours (12-hour format)
-	    if (hour >= 12) {
-	        hour = 0;
-	    }
+      // Reset hours if they exceed 12, maintaining the 12-hour clock format
+      if (Hour >= 12) {
+          Hour = 0;
+      }
 
-	    // Wait for 1 second before the next iteration
-	    HAL_Delay(1000);
-    /* USER CODE BEGIN 3 */
+      // Pause for 1 second before the next loop iteration
+      HAL_Delay(1000);
+      /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }

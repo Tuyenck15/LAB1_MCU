@@ -107,9 +107,9 @@ int main(void)
   		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
   	}
   	if(Counter >= 4) Counter = 0;
-      /* USER CODE BEGIN 3 */
+
   	HAL_Delay(1000);
-    /* USER CODE BEGIN 3 */
+
   }
   /* USER CODE END 3 */
 }
